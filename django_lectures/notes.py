@@ -38,3 +38,129 @@ print(x)
 
 converted = set([1, 1, 1, 1, 2, 2, 2, 2, 2, 3, 3, 3]) # will convert the list into a set {1, 2, 3}
 print(converted)
+
+############################
+### Comparison Operators ###
+############################
+
+# Greater than
+1 > 2
+
+# Less than
+1 < 2
+
+# Greater than or Equal
+1 >= 0
+
+# Equality
+1 == 1
+1 == "1" # this will return false, STRONGLY TYPED
+'hi' == 'bye' #this will also return False
+
+# Inequality
+1 != 2
+
+
+#########################
+### Logical Operators ###
+#########################
+
+# AND
+(1 > 2) and (2 < 3) # both must be equal to return true
+
+# OR
+(1 > 2) or (2 < 3) # at least one must be equal to return True
+
+# Multiple logical Operators
+(1 == 2) or (2 == 3) or (4 == 4)
+
+################################
+### IF, ELIF, ELSE Statments ###
+################################
+
+if 1 < 2:
+    print('yes')
+
+if 1 < 2:
+    if 2 < 3:
+        print('True!')
+
+if 1 < 2:
+    print('First Block')
+    if 20 < 3:
+        print('Second Block') # this will not execute
+
+if 2 < 1:
+    print('hello') # this will not execute
+else:
+    print('last')
+
+if 1 ==1:
+    if 1 > 2:
+        print('hello')
+    elif 3 == 3:
+        print('elif ran')
+    else:
+        print('last')
+
+#############
+### LOOPS ###
+#############
+
+# For LOOPS
+
+seq = [1,2,3,4,5,6]
+
+for item in seq:
+    # code here
+    print(item) # prints each item in the list, it will print that item
+    # item is kittykat
+
+d = {'Sam': 1, 'Frank': 2, 'Dan': 3}
+
+for item in d:
+    print(item) # just like the list, it will print out each item in the dictionary, but don't expect it to be in a specific order
+    # will only print the keys
+
+for k in d:
+    print(k)
+    print(d[k]) # this allows us to list the actual values of each key
+
+mypairs = [(1, 2), (3, 4), (5, 6)]
+
+for item in mypairs:
+    print(item)
+
+# tuple unpacking
+# for (tup1, tup2) in mypairs:
+for tup1, tup2 in mypairs:
+    print(tup2)
+    print(tup1)
+
+# WHILE LOOPS
+i = 1
+
+while i <5:
+    print("i is {}".format(i))
+    i = i + 1
+
+# Range Function
+for item in range(10):
+    print(item)
+# will print each number up to but not including 10
+
+#List comprehension
+
+x = [1, 2, 3, 4]
+out = []
+
+for num in x:
+    out.append(num**2)
+
+print(out)
+
+# instead do
+
+out = [num**2 for num in x]
+
+print(out)
