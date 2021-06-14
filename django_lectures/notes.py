@@ -217,3 +217,7 @@ tweet = "Go Sports! #Sports"
 result = tweet.split('#')[1] # gives back the first item after a '#' or first index of the array created from the split method
 
 print(result)
+
+# in operator returns a boolean, checks for first item in a defined list
+print('x' in [1, 2, 3]) # false
+print('x' in [1, 2, 3, 'x']) # true 
