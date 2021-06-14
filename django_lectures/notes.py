@@ -192,3 +192,19 @@ result = addNum("2", "3")
 # will result in concatonation making a string "23" instead of number 5
 # refactored for type check
 print(result)
+
+# Lambda Expression
+
+# Filter
+mylist = [1, 2, 3, 4, 5, 6, 7, 8]
+
+def even_bool(num):
+    return num%2 == 0
+
+evens = filter(even_bool, mylist)
+
+print(list(evens))
+
+evens2 = filter(lambda num: num%2 == 0, mylist)
+
+print(evens2)
