@@ -170,6 +170,25 @@ print(out)
 #################
 
 def my_func(param1='default'):
-    print("my first python function")
+    """
+    THIS IS THE DOCSTRING
+    """
+    print("my first python function! {}".format(param1))
 
-my_func()
+def hello():
+    return "hello"
+
+result = hello()
+
+print(result)
+
+def addNum(num1, num2):
+    if type(num1) == type(num2) == type(10):
+        return num1 + num2
+    else:
+        return "Sorry, I need integers"
+
+result = addNum("2", "3")
+# will result in concatonation making a string "23" instead of number 5
+# refactored for type check
+print(result)
