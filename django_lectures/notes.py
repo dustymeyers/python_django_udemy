@@ -164,3 +164,12 @@ print(out)
 out = [num**2 for num in x]
 
 print(out)
+
+#################
+### Functions ###
+#################
+
+def my_func(param1='default'):
+    print("my first python function")
+
+my_func()
