@@ -205,6 +205,15 @@ evens = filter(even_bool, mylist)
 
 print(list(evens))
 
+# lambda allows us to make an anonymous function
 evens2 = filter(lambda num: num%2 == 0, mylist)
 
 print(evens2)
+
+tweet = "Go Sports! #Sports"
+
+# gives back an array of our string divided up wherever python sees a '#' but does not include it
+# result = tweet.split('#')
+result = tweet.split('#')[1] # gives back the first item after a '#' or first index of the array created from the split method
+
+print(result)
