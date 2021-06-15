@@ -10,7 +10,7 @@
 #####################
 ## -- PROBLEM 1 -- ##
 #####################
-
+print('PROBLEM 1')
 # Given a list of integers, return True if the sequence of numbers 1, 2, 3
 # appears in the list somewhere.
 
@@ -20,8 +20,14 @@
 # arrayCheck([1, 1, 2, 4, 1])  False
 # arrayCheck([1, 1, 2, 1, 2, 3])  True
 
+# def arrayCheck(nums):
+#     return 1 and 2 and 3 in nums
+
 def arrayCheck(nums):
-    return 1 and 2 and 3 in nums
+    for i in range(len(nums)-2):
+        if nums[i] == 1 and nums[i + 1] == 2 and nums[i + 2] == 3:
+            return True
+    return False
 
 print(arrayCheck([1, 2, 3]))
 print(arrayCheck([1, 2, 0]))
@@ -29,7 +35,7 @@ print(arrayCheck([1, 2, 0]))
 #####################
 ## -- PROBLEM 2 -- ##
 #####################
-
+print('PROBLEM 2')
 # Given a string, return a new string made of every other character starting
 # with the first, so "Hello" yields "Hlo".
 
@@ -40,7 +46,14 @@ print(arrayCheck([1, 2, 0]))
 # stringBits('Heeololeo')  'Hello'
 
 def stringBits(str):
-    return str[::2]
+    result = ""
+
+    for i in range(len(str)):
+        if i%2 == 0:
+            result = result + str[i]
+
+    return result
+    # return str[::2]
 
 print(stringBits('Hello'))
 print(stringBits('Heeololeo'))
@@ -48,7 +61,7 @@ print(stringBits('Heeololeo'))
 #####################
 ## -- PROBLEM 3 -- ##
 #####################
-
+print('PROBLEM 3')
 # Given two strings, return True if either of the strings appears at the very end
 # of the other string, ignoring upper/lower case differences (in other words, the
 # computation should not be "case sensitive").
@@ -63,17 +76,21 @@ print(stringBits('Heeololeo'))
 
 
 def end_other(a, b):
-    return a.lower() in b.lower() or b.lower() in a.lower()
+    # return a.lower() in b.lower() or b.lower() in a.lower()
+    a = a.lower()
+    b = b.lower()
+
+    return a[-(len(b)):] == b or a == b[-len(a):]
 
 print(end_other('Hiabc', 'abc'))
 print(end_other('AbC', 'HiaBc'))
 print(end_other('abc', 'abXabc'))
-print(end_other('x', 'abc'))
+print(end_other('x', 'abcx'))
 
 #####################
 ## -- PROBLEM 4 -- ##
 #####################
-
+print('PROBLEM 4')
 # Given a string, return a string where for every char in the original,
 # there are two chars.
 
@@ -94,7 +111,7 @@ print(doubleChar('Hi-There'))
 #####################
 ## -- PROBLEM 5 -- ##
 #####################
-
+print('PROBLEM 5')
 # Read this problem statement carefully!
 
 # Given 3 int values, a b c, return their sum. However, if any of the values is a
@@ -116,6 +133,7 @@ def no_teen_sum(a, b, c):
     return fix_teen(a) + fix_teen(b) + fix_teen(c)
 
 def fix_teen(n):
+    # if n in [13, 14, 17, 18, 19]:
     if 13 <= n <= 14 or 17 <= n <= 19:
         return 0
     return n
@@ -127,7 +145,7 @@ print(no_teen_sum(2, 1, 14))
 #####################
 ## -- PROBLEM 6 -- ##
 #####################
-
+print('PROBLEM 6')
 # Return the number of even integers in the given array.
 #
 # Examples:
