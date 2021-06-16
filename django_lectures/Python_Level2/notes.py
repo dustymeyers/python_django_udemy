@@ -53,11 +53,73 @@
 # print(x)
 
 # lets say we wanted to actually change the global value of the code block above
-x = 50
-def func():
-  global x 
-  x = 1000
+# x = 50
+# def func():
+#   global x 
+#   x = 1000
 
-print('Before function call, x is:', x)
-func()
-print('After function call, x is:', x)
+# print('Before function call, x is:', x)
+# func()
+# print('After function call, x is:', x)
+
+#############################################################
+# OBJECT ORIENTED PROGRAMMING IN PYTHON (OOP)
+
+# mylist is actually an object
+mylist = [1, 2, 3]
+
+# append is a built in method of all python objects
+mylist.append(4)
+print(mylist)
+
+print(type([])) # class list
+print(type(())) # class tuple
+print(type(20)) # class integer
+print(type(20.0)) # class float
+
+# everything in python are objects!!!!
+# mylist above is an instance of a list class
+
+# capitalize all of your classes
+class Dog():
+
+  # CLASS OBJECT ATTRIBUTE
+  species = "mammal"
+
+  # initialize (constructor), always include self as the first argument
+  def __init__(self, breed, name):
+    self.breed = breed 
+    self.name = name
+
+
+my_dog = Dog(breed = "Lab", name = "Sammy") # will throw an error if missing proper arguments for __init__
+# more typically will see it look like the following
+# my _dog = Dog("Lab", "Sammy")
+# other_dog = Dog(breed = "Huskey")
+
+# print(type(my_dog)) # class __main__.Sample
+
+print(my_dog.breed)
+print(my_dog.name)
+print(my_dog.species)
+
+class Circle():
+
+  pi = 3.14
+
+  def __init__(self, radius = 1):
+      # creates an instance of the .radius attrbiute for circle
+      self.radius = radius
+
+  def area(self):
+    return self.radius * self.radius * Circle.pi
+
+  def set_radius(self, new_radius):
+    self.radius = new_radius
+
+my_c = Circle() # radius defaults to 1
+my_c.set_radius(999)
+print(my_c.radius)
+
+another_c = Circle(3)
+print(another_c.area())
