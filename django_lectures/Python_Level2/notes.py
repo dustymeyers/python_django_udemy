@@ -28,15 +28,36 @@
 
 # Enclosing function locals
 # if we were to comment out the name variable within the greet function, The nested hello function would come then check globally
-name = 'This is a global name!'
+# name = 'This is a global name!'
 
-def greet():
-  name = "sammy"
+# def greet():
+#   name = "sammy"
 
-  def hello():
-    print("hello " + name)
+#   def hello():
+#     print("hello " + name)
   
-  hello()
+#   hello()
 
-greet()
-print(name)
+# greet()
+# print(name)
+
+# MORE LOCAL
+
+# x = 50
+# def func(x):
+#   print('x is:', x)
+#   x = 1000
+#   print('local x changed to:', x)
+
+# func(x)
+# print(x)
+
+# lets say we wanted to actually change the global value of the code block above
+x = 50
+def func():
+  global x 
+  x = 1000
+
+print('Before function call, x is:', x)
+func()
+print('After function call, x is:', x)
