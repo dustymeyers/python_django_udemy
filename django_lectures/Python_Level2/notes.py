@@ -13,11 +13,30 @@
 # In the following example, the first `print(x)` is x printing out the globally known variable because `my_func()` has not yet been declared
 # When `my_func()` is called on the following line, and x is now reassigned to 50 within the scope of the function (this is only done within the scope of the function, the global variable if called later will return 25)
 
-x = 25
+# x = 25
 
-def my_func():
-  x = 50
-  return x
+# def my_func():
+#   x = 50
+#   return x
 
-print(x)
-print(my_func())
+# my_func()
+# print(x)
+
+
+# Local
+# lambda x: x**2
+
+# Enclosing function locals
+# if we were to comment out the name variable within the greet function, The nested hello function would come then check globally
+name = 'This is a global name!'
+
+def greet():
+  name = "sammy"
+
+  def hello():
+    print("hello " + name)
+  
+  hello()
+
+greet()
+print(name)
