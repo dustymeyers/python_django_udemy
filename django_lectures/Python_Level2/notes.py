@@ -81,27 +81,27 @@ print(type(20.0)) # class float
 # mylist above is an instance of a list class
 
 # capitalize all of your classes
-class Dog():
+# class Dog():
 
-  # CLASS OBJECT ATTRIBUTE
-  species = "mammal"
+#   # CLASS OBJECT ATTRIBUTE
+#   species = "mammal"
 
-  # initialize (constructor), always include self as the first argument
-  def __init__(self, breed, name):
-    self.breed = breed 
-    self.name = name
+#   # initialize (constructor), always include self as the first argument
+#   def __init__(self, breed, name):
+#     self.breed = breed 
+#     self.name = name
 
 
-my_dog = Dog(breed = "Lab", name = "Sammy") # will throw an error if missing proper arguments for __init__
-# more typically will see it look like the following
-# my _dog = Dog("Lab", "Sammy")
-# other_dog = Dog(breed = "Huskey")
+# my_dog = Dog(breed = "Lab", name = "Sammy") # will throw an error if missing proper arguments for __init__
+# # more typically will see it look like the following
+# # my _dog = Dog("Lab", "Sammy")
+# # other_dog = Dog(breed = "Huskey")
 
-# print(type(my_dog)) # class __main__.Sample
+# # print(type(my_dog)) # class __main__.Sample
 
-print(my_dog.breed)
-print(my_dog.name)
-print(my_dog.species)
+# print(my_dog.breed)
+# print(my_dog.name)
+# print(my_dog.species)
 
 class Circle():
 
@@ -123,3 +123,60 @@ print(my_c.radius)
 
 another_c = Circle(3)
 print(another_c.area())
+
+# Inheritance
+# Allows for code reuse, inherit things from one class to another
+class Animal():
+
+  def __init__(self):
+    print("Animal Created")
+
+  def who_am_i(self):
+    print("Animal")
+
+  def eat(self):
+    print('Eating')
+
+class Dog(Animal):
+
+  def __init__(self):
+      # Animal.__init__(self)
+      print("Dog Created")
+  
+  def bark(self):
+      print("WOOF!")
+
+  # overides the eat method inherited from the Animal class
+  def eat(self):
+      print("Dog eating")
+
+my_animal = Animal()
+
+my_animal.who_am_i()
+my_animal.eat()
+
+my_dog = Dog()
+my_dog.who_am_i()
+my_dog.eat()
+my_dog.bark()
+
+# SPECIAL METHODS
+
+class Book():
+
+  def __init__(self, title, author, pages):
+      self.title = title
+      self.author = author
+      self.pages = pages
+
+  # we will need to make a string representation to print out the object
+  # special methods are denoted with two underscores on either side of the name
+  def __str__(self):
+      return "Title: {}, Author: {}, Pages: {}".format(self.title, self.author, self.pages)
+
+  def __len__(self):
+      return self.pages
+
+b = Book("Python", "Jose", 200)
+print(b)
+print(len(b))
